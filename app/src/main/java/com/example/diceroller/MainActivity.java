@@ -1,6 +1,7 @@
 package com.example.diceroller;
 
 import android.os.Bundle;
+import android.support.annotation.IntegerRes;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -9,12 +10,15 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-
+    int points=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
     }
 
     @Override
@@ -56,9 +61,24 @@ public class MainActivity extends AppCompatActivity {
     public void on_button_click(View view){
        final TextView tv = this.findViewById(R.id.but);
         Random r= new Random();
+
         final int number = r.nextInt ( 6);
+        EditText field = this.findViewById(R.id.entern);
+        TextView gz =this.findViewById(R.id.Gratz);
+        TextView point =this.findViewById(R.id.point);
+        String numbeer= field.getText().toString();
+         int nr = Integer.parseInt(numbeer);
+    if (nr==number){
+        gz.setText("Congratulations");
 
+        points+=1;
+        int score=points;
+        point.setText("Points:"+ score );
 
+    }
+    else {
+        points+=0;
+    }
 
 
           tv.setText(Integer.toString(number));
