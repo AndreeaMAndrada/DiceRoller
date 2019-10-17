@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     public void on_button_click(View view){
        final TextView tv = this.findViewById(R.id.but);
         Random r= new Random();
-        final int number = r.nextInt ( 6);
+        final int number = r.nextInt ( 7);
 
 
 
