@@ -63,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
         final TextView tv = this.findViewById(R.id.but);
         Random r= new Random();
 
-        final int number = r.nextInt ( 6);
+         int number = r.nextInt ( 6);
+        number +=1;
         EditText field = this.findViewById(R.id.entern);
         TextView gz =this.findViewById(R.id.Gratz);
         TextView point =this.findViewById(R.id.point);
