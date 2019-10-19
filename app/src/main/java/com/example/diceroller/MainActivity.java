@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
             }
         });
 
@@ -59,32 +60,33 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public void on_button_click(View view){
-       final TextView tv = this.findViewById(R.id.but);
+        final TextView tv = this.findViewById(R.id.but);
         Random r= new Random();
 
-        final int number = r.nextInt ( 6);
+         int number = r.nextInt ( 6);
+        number +=1;
         EditText field = this.findViewById(R.id.entern);
         TextView gz =this.findViewById(R.id.Gratz);
         TextView point =this.findViewById(R.id.point);
         String numbeer= field.getText().toString();
-         int nr = Integer.parseInt(numbeer);
-    if (nr==number){
-        gz.setText("Congratulations");
+        int nr = Integer.parseInt(numbeer);
+        if (nr==number){
+            gz.setText("Congratulations");
 
-        points+=1;
-        int score=points;
-        point.setText("Points:"+ score );
-
-    }
+            points+=1;
+            int score=points;
+            point.setText("Points:"+ score );}
     else {
         points+=0;
     }
 
+        tv.setText(Integer.toString(number));
 
-          tv.setText(Integer.toString(number));
-      }
+    }
 
 
 
     }
+
+
 
