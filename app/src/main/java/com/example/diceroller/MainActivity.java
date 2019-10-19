@@ -74,29 +74,18 @@ public class MainActivity extends AppCompatActivity {
 
             points+=1;
             int score=points;
-            point.setText("Points:"+ score );
-    if (nr==number){
-        gz.setText("Congratulations");
-
-        points+=1;
-         score=points;
-        point.setText("Points:"+ score );
-
-    }
+            point.setText("Points:"+ score );}
     else {
         points+=0;
     }
 
-        }
-        else {
-            points+=0;
-            points=0;
-        }
-
-
         tv.setText(Integer.toString(number));
+
     }
 
 
 
-}
+    }
+
+
+
