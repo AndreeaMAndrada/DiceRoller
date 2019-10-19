@@ -68,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
         TextView gz =this.findViewById(R.id.Gratz);
         TextView point =this.findViewById(R.id.point);
         String numbeer= field.getText().toString();
-<<<<<<< HEAD
         int nr = Integer.parseInt(numbeer);
         if (nr==number){
             gz.setText("Congratulations");
@@ -76,20 +75,17 @@ public class MainActivity extends AppCompatActivity {
             points+=1;
             int score=points;
             point.setText("Points:"+ score );
-=======
-         int nr = Integer.parseInt(numbeer);
     if (nr==number){
         gz.setText("Congratulations");
 
         points+=1;
-        int score=points;
+         score=points;
         point.setText("Points:"+ score );
 
     }
     else {
         points+=0;
     }
->>>>>>> 85f5de8b9cf075197a93a0c59d9f25a5b5b6e558
 
         }
         else {
