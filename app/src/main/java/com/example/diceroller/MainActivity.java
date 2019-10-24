@@ -1,5 +1,6 @@
 package com.example.diceroller;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IntegerRes;
 import android.support.design.widget.FloatingActionButton;
@@ -63,8 +64,9 @@ public class MainActivity extends AppCompatActivity {
         final TextView tv = this.findViewById(R.id.but);
         Random r= new Random();
 
-         int number = r.nextInt ( 6);
+        int number = r.nextInt ( 6);
         number +=1;
+
         EditText field = this.findViewById(R.id.entern);
         TextView gz =this.findViewById(R.id.Gratz);
         TextView point =this.findViewById(R.id.point);
@@ -76,17 +78,39 @@ public class MainActivity extends AppCompatActivity {
             points+=1;
             int score=points;
             point.setText("Points:"+ score );}
-    else {
-        points+=0;
-    }
+        else {
+            points+=0;
+        }
 
         tv.setText(Integer.toString(number));
 
     }
+    public void roll_the_dice(View view){
+        Random r = new Random();
+        int number = r.nextInt(6);
+        number += 1;
+        TextView ice = this.findViewById(R.id.ice);
 
 
+        if (number == 1) ice.setText("If you could go anywhere in the world, where would you go?");
+        else if (number == 2) {
+            ice.setText("If you were stranded on a desert island, what three things would you want to take with you?");
+        } else if (number == 3) {
+            ice.setText("If you could eat only one food for the rest of your life, what would that be?");
+        } else if (number == 4) {
+            ice.setText("If you won a million dollars, what is the first thing you would buy?");
 
+        } else if (number == 5) {
+            ice.setText("If you could spaned the day with one fictional character, who would it be?");
+        } else if (number == 6) {
+            ice.setText("If you found a magic lantern and a genie gave you three wishes, what would you wish?");
+        }
     }
 
+
+
+
+
+}
 
 
